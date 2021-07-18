@@ -36,26 +36,15 @@ return out
 }
 var op=program("masai",0)
 console.log(op) */
-/* function program(input) {
-    // input
-    // write code here
-    input= input.split(" ")
-    var x = Number(input[0])
-    for (var i = Number(input[0])+1; i < Number(input[1]);i++){
-        x +="\n"+i
-    }
-    return(x)
-}
-
-var op=program("hello")
+ 
 /* /* /* console.log(op) */
 /* var x="hello"
 console.log(x.split(" ")) */
 
-function number(input){
+/* function number(input){
     input=input.split("\n")
     input=input[1].split(" ").map(Number)
-    var count=0
+    var count = 0
     for(i=0;i<input.length;i++){
         if(input[i]<0){
             count+=1
@@ -64,4 +53,34 @@ function number(input){
          }
          console.log(count)
     }
+    number(3 , "-1 -2 -3") */
+/*     function processData(input){
+        input = input.split("\n")
+        size = Number(input[0])
+        arr = input[1].split(" ")
+        //console.log(arr)
+        //console.log(size)
+         var count =0
+           for (var i=0 ; i < size ;i++){
+            if(Number(arr[i]) < 0){
+                count = (count+1)
+            }
+        }
+        console.log(count)
+        
+    } 
+    processData(3 , "-1 -2 -3") */
 
+    function program(input) {
+        // input
+        // write code here
+        input= input.split(" ")
+        var x = Number(input[0])
+        for (var i = Number(input[0])+1; i < Number(input[1]);i++){
+            x +="\n"+i
+        }
+        return(x)
+    }
+    
+    var op=program("masai")
+    console.log(op)
