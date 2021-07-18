@@ -1,0 +1,70 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+</head>
+
+
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-6">
+                <p class="h3 m-3">Student Marks Form</p>
+
+                <form id="submit_form">
+                    <div class="form-group">
+                        <label for="student_name">Student Name</label>
+                        <input type="text" class="form-control" id="student_name">
+                    </div>
+                    <div class="form-group">
+                        <label for="marks_engilsh">English Marks</label>
+                        <input type="text" class="form-control" id="marks_engilsh">
+                    </div>
+                    <div class="form-group">
+                        <label for="marks_science">Science Marks</label>
+                        <input type="text" class="form-control" id="marks_science">
+                    </div>
+                    <div class="form-group">
+                        <label for="marks_maths">Maths Marks</label>
+                        <input type="text" class="form-control" id="marks_maths">
+                    </div>
+                    <input type="submit" class="btn btn-primary" value="Submit">
+                </form>
+
+            </div>
+
+            <div class="col-6">
+
+                <button type="submit" class="btn btn-info m-4" id="search_top_student">Get Top Student</button>
+                <br>
+                <div class="container" id="display_top"></div>
+                <br>
+                <button type="submit" class="btn btn-info m-4" id="get_avg">Get Class Average</button>
+                <div class="container" id="display_avg"></div>
+
+            </div>
+        </div>
+
+        <br>
+
+        <div class="row">
+            <div class="col-8">
+
+                <div class="form-group">
+                    <label for="inlineFormCustomSelectPref" class="m-1">Select Student</label>
+                    <select class="custom-select m-1" id="select">
+                        <option selected>Choose...</option>
+                    </select>
+                </div>
+
+                <div class="container" id="student_info"></div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="User_Marks.js"></script>
+</body>
+
+</html>

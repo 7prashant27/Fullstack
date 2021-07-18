@@ -1,0 +1,77 @@
+<html>
+
+<head>
+    <style>
+        #display {
+            width: 150px;
+            height: 20px;
+            background-color: wheat;
+            border: 1px solid black;
+            padding: 10px;
+            text-align: right;
+        }
+
+        button {
+            margin-top: 10px;
+            width: 50px;
+        }
+        input {text-align: right;}
+    </style>
+</head>
+
+<body>
+    <div class="cont">
+        <div id="display"></div>
+        <br>
+        <div id="input_div">
+            <input type="text" id="for_add">
+            <button id="add">+</button>
+            <br>
+            <input type="text" id="for_sub">
+            <button id="sub">-</button>
+            <br>
+            <input type="text" id="for_divide">
+            <button id="div">/</button>
+            <br>
+            <input type="text" id="for_multiply">
+            <button id="multi">*</button>
+        </div>
+
+
+    </div>
+    <script>
+        window.addEventListener("load" ,add)
+        let counter = 1
+        function add() {
+            document.getElementById("input_div").addEventListener("click", do_task)
+        }
+
+        function do_task(){
+            let target = document.getElementById("display")
+            target.innerText = ""
+            if (event.target.id == "add"){
+                let value = document.getElementById("for_add").value
+                target.textContent = counter+Number(value)
+                counter++
+            }
+            else if (event.target.id == "sub"){
+                let value = document.getElementById("for_sub").value
+                target.textContent = Number(value)-counter
+                counter++
+            }
+            else if (event.target.id == "div"){
+                let value = document.getElementById("for_divide").value
+                target.textContent = Number(value)/counter
+                counter++
+            }
+            else if (event.target.id == "multi"){
+                let value = document.getElementById("for_multiply").value
+                target.textContent = counter*Number(value)
+                counter++
+            }
+        }
+
+    </script>
+</body>
+
+</html>

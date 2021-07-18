@@ -1,0 +1,58 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+</head>
+
+
+<body>
+
+
+    <div class="container bg-danger rounded p-4">
+
+        <div class="row">
+            <div class="col">
+                <div class="alert alert-success text-center" role="alert">
+                    <p class="h5">Powered by reqres.in</p>
+                </div>
+            </div>
+        </div>
+
+        <hr>
+        
+        <div class="row">
+            <div class="col-6  m-4 bg-warning p-4 rounded">
+                <div>
+                    <div class="form-group">
+                        <label for="log_id">Email address</label><small class="text-danger">*</small>
+                        <input type="text" placeholder="User Id" id="log_id" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="log_pass">Password</label><small class="text-danger">*</small>
+                        <input type="password" placeholder="password" id="log_pass" class="form-control">
+                        <small id="log_error" class="form-text text-danger"></small>
+                    </div>
+                    <button id="log_submit" class="btn btn-primary">Login</button>
+                </div>
+            </div>
+            <div class="col-4 m-4 bg-light p-4 rounded">
+                <p class="h5">Sample User ID & Password</p>
+                <hr>
+                <p>"email": "eve.holt@reqres.in"<br>
+                    "password": "pistol"
+                </p>
+                <hr>
+                <p>"email": "eve.holt@reqres.in"<br>
+                    "password": "pistol"
+                </p>
+                <hr>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="login.js"></script>
+</body>
+
+</html>

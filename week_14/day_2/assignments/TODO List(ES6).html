@@ -1,0 +1,262 @@
+<html>
+
+<head>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+
+    <style>
+        /* .container{
+                position: relative;
+            } */
+
+        /* .plus{
+                position: absolute;
+                padding-left: 10px;
+                z-index: 1;
+                font-size: 24px;
+            } */
+
+        /* .input{
+                position: absolute;
+                left: 10px;
+                padding-left: 25px !important ;
+                z-index: 0;
+            } */
+    </style>
+</head>
+
+
+<body>
+
+    <div class="container">
+
+        <div class="row">
+            <div class="col-5">
+                <p class="h3">ToDo App</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-6">
+                <button type="button" class="btn btn-outline-success btn-block m-1" data-toggle="modal"
+                    data-target="#addItemModel">Add
+                    Item</button>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-5 p-3">
+                <span class="badge badge-info p-2">Active ToDo List </span>
+                <div class="container-fulid" id="active_todo"></div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-5 p-3">
+                <span class="badge badge-info p-2">Fab ToDo List </span>
+                <div class="container-fulid" id="fab_todo"></div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-5 p-3">
+                <span class="badge badge-info p-2">Task Done</span>
+                <div class="container-fulid" id="done_todo"></div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+    <div class="modal fade" id="addItemModel" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Add Item To List</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                <div class="modal-body">
+
+
+                    <div class="form-inline">
+                        <label for="todo_input" class="mr-2">ToDo</label>
+
+
+                        <input type="email" class="form-control" id="todo_input" aria-describedby="emailHelp"
+                            placeholder="Enter the Task">
+
+
+                        <button class="btn btn-primary ml-4" data-dismiss="modal" id="add_item">Add Item</button>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal fade" id="addItemModel" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Add Item To List</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                <div class="modal-body">
+
+
+                    <div class="form-inline">
+                        <label for="todo_input" class="mr-2">ToDo</label>
+
+
+                        <input type="email" class="form-control" id="todo_input" aria-describedby="emailHelp"
+                            placeholder="Enter the Task">
+
+
+                        <button class="btn btn-primary ml-4" data-dismiss="modal" id="add_item">Add Item</button>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal fade" id="editItemModel" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Add Item To List</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                <div class="modal-body">
+
+
+                    <div class="form-inline">
+                        <label for="edit_todo_input" class="mr-2">ToDo</label>
+
+
+                        <input type="email" class="form-control" id="edit_todo_input" aria-describedby="emailHelp"
+                            placeholder="Enter the Task">
+
+
+                        <button class="btn btn-primary ml-4" data-dismiss="modal" id="edit_item">Edit Item</button>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script>
+        window.addEventListener("load", () => document.getElementById("add_item").addEventListener("click", addTodo))
+
+
+
+        let tasksArr = []
+        let fabArr = []
+        let idNo = tasksArr.length
+
+
+        const addTodo = () => {
+            const taskElem = document.getElementById("todo_input")
+            taskInput = taskElem.value
+            console.log(taskInput)
+            taskElem.value = ""
+            let payload = {
+                taskId: idNo,
+                task: taskInput,
+                status: false,
+                fab: false
+            }
+            tasksArr.push(payload)
+            idNo++
+
+            renderDom()
+        }
+
+        //<input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+
+        const renderDom = () => {
+            const target = document.getElementById("active_todo")
+            target.innerHTML = ""
+            let fragment = document.createDocumentFragment()
+            tasksArr.forEach((element) => {
+                if (element.status == false && element.fab == false) {
+                    let div = document.createElement("div")
+                    let check = document.createElement("input")
+                    let tag = document.createElement("p")
+                    let star = document.createElement("Button")
+                    let remove = document.createElement("button")
+                    div.setAttribute("class", "alert alert-secondary d-flex flex-row my-2")
+                    div.setAttribute("id", element.idNo)
+                    div.addEventListener("click", do_Something)
+                    check.setAttribute("class", "form-check-input d-flex justify-content-start")
+                    check.setAttribute("type", "checkbox")
+                    check.setAttribute("id", "check")
+                    tag.setAttribute("class", "d-flex justify-content-start flex-fill ml-3")
+                    tag.textContent = element.task
+                    tag.setAttribute("id", "task")
+                    star.setAttribute("class", " btn d-flex justify-content-end")
+                    star.textContent = "✩"
+                    remove.setAttribute("class", "close d-flex justify-content-end btn text-danger")
+                    remove.textContent = "X"
+                    div.append(check, tag, star, remove)
+                    fragment.append(div)
+                }
+            });
+            console.log(tasksArr)
+            target.append(fragment)
+        }
+
+        const do_Something = () => {
+            if (event.target.id == "task") { open_edit_model() }
+            if (event.target.id == "check") { (done_task) }
+        }
+        //if(event.target.id == "task"){open_model()}
+        //if(event.target.id == "task"){open_model()}}
+
+
+        const open_edit_model = () => {
+            let model = document.querySelector("#editItemModel")
+            model.style.opacity = 1
+            model.style.display = "block"
+
+            
+        }
+
+        const done_task = () => { }
+
+    </script>
+
+</body>
+
+</html>

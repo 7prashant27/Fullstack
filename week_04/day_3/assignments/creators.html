@@ -1,0 +1,74 @@
+<html>
+    <head>
+        <title>Practise Creators</title>
+    </head>
+    <body>
+        <div id="headings">
+        </div>
+        <div id="cont">
+        </div>
+        <ul id="vikings">
+            <li>Priyanshu</li>
+        </ul>
+        <button onclick="create_h1()">Create H1</button>
+        <button onclick="create_h3()">Create 2 H3</button>
+        <button onclick="create_divs()">Create DIVS</button>
+        <button onclick="create_li()">Add Students</button>
+        <button onclick="Copyright()">Add Copyright</button>
+        <script type="text/javascript">
+                function create_h1(){
+                    // creation part
+                    var new_elem = document.createElement("h1")
+                    new_elem.textContent = "MASAI"
+                    //appending
+                    var r = document.querySelector("#headings")
+                    r.append(new_elem) 
+                }
+
+                function create_h3(){
+                    // creation part
+                    var new_elem = document.createElement("h3")
+                    new_elem.textContent = "A Transformation in education!"
+                    var new_elem2 = document.createElement("h3")
+                    new_elem2.textContent = "Learn to earn, pay when you get."
+                    //appending
+                    var r = document.querySelector("#headings")
+                    r.append(new_elem,new_elem2) 
+                }
+
+                function create_divs(){
+                    // creation part
+                    for (var i =0; i < 10;i++){
+                    var new_elem = document.createElement("div")
+                    new_elem.textContent = "Content "+ (i+1)
+                    //appending
+                    var r = document.querySelector("#cont")
+                    r.append(new_elem) 
+                    }
+                }
+
+                function create_li(){
+                    
+                    var students = ['Ajay','Akshay','Anusha','Chandrashekhara','Haren','Hasaan','Mahesh',
+                                'Mousumi','Pavan','Rahul','Sumanta','Venkatesh','Vetrival','Vijayendra'];
+                    // creation part
+                    for (var i =0; i < 14;i++){
+                    var new_elem = document.createElement("li")
+                    new_elem.textContent = students[i]
+                    //appending
+                    var r = document.querySelector("#vikings")
+                    r.append(new_elem) 
+                    }
+                }
+                function Copyright(){
+                    // creation part
+                    var new_elem = document.createElement("p")
+                    new_elem.textContent = "@ masai 2019"
+                    var r = document.querySelector("body")
+                    var ref = document.querySelector("body button")
+                    r.insertBefore(new_elem, ref)
+
+                }
+        </script>
+    </body>
+</html>

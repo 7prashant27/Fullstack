@@ -1,0 +1,44 @@
+<html>
+
+<head>
+    <style>
+        #searchID *{
+            display: block;
+        }
+    </style>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="form-group container">
+        <div class="row">
+            <div class="col" id="searchID">
+                <label>Enter keyword</labelkeyword>
+                <input type="text" id="keyword" class="form-control">
+                <label>Sort results</label>
+                <select id="option">
+                <option>----</option>
+                <option id="starSort" value="stars">Sort by Star</option>
+                <option id="forks" value="fork">Sort by Forks</option>
+                <option id="help-wanted-issues" value="help">Sort by Help-wanted-issues</option>
+                <option id="recent_updated" value="updated">Sort by Recent_updated</option>
+                </select>
+                <label>Sort results</label>
+                <select id="sort">
+                    <option value="----">----</option>
+                    <option value="asc">Asc</option>
+                    <option value="desc">Desc</option>
+                </select>
+                <button id="search" class="btn btn-success">Search</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="cont" class=""></div>
+
+
+    <script type="text/javascript" src="github_repo_search.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,83 @@
+<html>
+<head>
+        <style>
+            .main_div {width: 30%; height: 70%; border: 2px solid black; margin: auto;}
+            .first {display: flex; margin: auto;}
+            .first > div {flex-basis: 20%; border: 2px solid black ;padding: 10px; height: 30px; margin-left: 15%; margin-top: 10px;}
+            .name {display: flex; margin: auto;}
+            .name > h3  {margin : auto;}
+
+
+            .board {text-align: center;}
+            #display {margin: auto; height: 40px; width: 70%; border: 2px solid black; margin-bottom: 20px;}
+            
+
+            .num_pad {display: grid; grid-template-columns: auto auto auto; width: 70%; margin: auto;}
+            .num_pad  div { margin: 5px; border: 2px solid black; padding: 10px; text-align: center;}
+
+            .num_pad  div:nth-child(2n){background-color: orange}
+            .num_pad  div:nth-child(2n+1){background-color: rgb(5, 155, 5)}
+            .num_pad  div:nth-child(5){background-color: orange}
+
+            #num_0 { grid-area: 4 / 2 ; background-color: purple; color: white;}
+            #Enter {grid-area: 5 / 1 / span 1 / span 3 ; background-color: black; color: white;}
+
+
+        </style>
+</head>
+
+<body>
+
+    <div class="main_div">
+
+
+
+        <div >
+        <div class="first">
+            <div id="min_display">45
+            </div>
+            
+
+
+            <div id="max_display">2020
+            </div>
+            
+        </div>
+        <div class="name">
+        <h3>MIN</h3>
+        <h3>MAX</h3>
+        </div>
+        </div>
+
+        <div class="board">
+            <h1>Score</h1>
+            <div id="display">
+
+            </div>
+        </div>
+
+
+        <div class="num_pad">
+
+            <div id="num_1" class="btn">1</div>
+            <div id="num_2" class="btn">2</div>
+            <div id="num_3" class="btn">3</div>
+            <div id="num_4" class="btn">4</div>
+            <div id="num_5" class="btn">5</div>
+            <div id="num_6" class="btn">6</div>
+            <div id="num_7" class="btn">7</div>
+            <div id="num_8" class="btn">8</div>
+            <div id="num_9" class="btn">9</div>
+            <div id="num_0" class="btn">0</div>
+            <div id="Enter">Enter</div>
+
+        </div>
+    </div>
+
+
+
+
+    <script type="text/javascript" src="leaderboard.js"></script>
+</body>
+
+</html>

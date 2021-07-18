@@ -1,0 +1,31 @@
+.card{
+    
+    margin: auto ;
+    width: 400px;
+    background-color: #231e39;
+	box-shadow: 0 8px 16px -2px black;
+
+}
+
+.card_body{
+    padding: 20px;
+    text-align: center;
+}
+
+.card_img{
+    border-radius: 50%;
+    width: 90%;
+}
+
+.card_img_holder{
+    margin: auto;
+    width: 120px;
+    padding: 10px;
+    border-radius: 50%;
+    border:1px solid #03bfcb;
+}
+
+.card_footer{
+    padding: 15px;
+    background-color: #1f1a36;
+}

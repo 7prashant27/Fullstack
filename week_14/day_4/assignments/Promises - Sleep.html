@@ -1,0 +1,67 @@
+<html>
+
+<head>
+
+</head>
+
+<body>
+    <input id="input" placeholder="time in mili secs">
+    <button id=submit>GET</button>
+    <div id="res"></div>
+    <script>
+
+        window.onload = function () {
+            var btn = document.getElementById("submit")
+            btn.addEventListener("click", handleSubmit)
+        }
+
+
+
+        function sleep(time) {
+            return new Promise((resolve, reject) => {
+                console.log(time)
+                if (Number.isNaN(time)) {
+                    reject({
+                        success: false,
+                        message: 'Invalid arguments'
+                    })
+                } else {
+                    setTimeout(() => resolve({
+                        success: true,
+                        message: "success"
+                    }), time);
+                }
+
+            })
+
+        }
+
+
+
+
+        function handleSubmit() {
+            var time = document.getElementById("input").value
+
+            time = Number(time)
+
+            sleep(time).then((message) => {
+                var res = document.getElementById("res")
+                res.innerHTML = ""
+                var p = document.createElement('p')
+                p.style.color = "green"
+                p.textContent = message.success + "  " + message.message
+                res.append(p)
+            }).catch((err) => {
+                var res = document.getElementById("res")
+                res.innerHTML = ""
+                var p = document.createElement('p')
+                p.style.color = "red"
+                p.textContent = err.success + "  " + err.message
+                res.append(p)
+            })
+        }
+
+    </script>
+</body>
+
+</html>

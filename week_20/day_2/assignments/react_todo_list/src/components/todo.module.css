@@ -1,0 +1,150 @@
+body{
+    background-color: coral;
+}
+
+.container{
+    width: 25%;
+    margin: 50px auto;
+    position: relative;
+    background-image: url("./4.jpg");
+    padding: 10px;
+    min-height: 200px;
+    border-radius: 5px;
+}
+
+
+.todo_input_div{
+    position: relative;
+    width: 100%;
+    padding: 5px 0px ;
+    background-color: #829376;
+    border-radius: 5px;
+}
+
+
+.todo_input{
+    position: absolute;
+    top: 14px;
+    border: none;
+    background: none;
+    outline: none;
+    color: white;
+    font-size: 18px;
+    width: 80%;
+}
+
+.todo_add{
+    border: none;
+    background: none;
+    outline: none;
+    color: white;
+    font-size: 35px;
+    width: 15%;
+
+}
+
+::placeholder { 
+    color: white;
+    opacity: 1;
+    font-family: 'Courier New', Courier, monospace;
+  }
+  
+input:focus::placeholder {
+    color: transparent;
+}
+
+.batch{
+    display: inline-block;
+    font-size: 10px;
+    background-color: #829376;
+    margin: 15px 0px;
+    padding: 5px;
+    color:white;
+    border-radius: 5px;
+    word-spacing: 5px;
+    letter-spacing: 2px
+}
+
+
+.tasks_div{
+    margin: 5px 0px;
+    background: white;
+    border-radius: 5px;
+    position: relative;
+    padding: 15px;
+}
+
+
+
+.done{
+    text-decoration: line-through;
+}
+
+
+.task{
+    position: absolute;
+    display: inline-block;
+    margin: 0px 0px 0px 10px;
+    font-size: 18px;
+}
+
+.task_check{
+    width: 20px;
+    height: 20px;
+    
+}
+
+.star{
+    display: inline-block;
+    position: absolute;
+    left: 90%;
+    top:5px;
+    font-size: 30px;
+    outline:none;
+    border: none;
+    background: none;
+}
+/* .task_check::after{
+    box-shadow: none; outline: none; background-color: transparent;
+} */
+
+.star:hover{
+    color: rgb(255, 180, 40);
+}
+
+
+
+.edit{
+    transform: rotate(-20deg);
+    display: inline-block;
+    position: absolute;
+    left: 82%;
+    top:11px;
+    font-size: 23px;
+    font-weight: bold;
+    outline:none;
+    border: none;
+    background: none;
+}
+
+
+.edit:hover{
+    color: rgb(79, 40, 255);
+}
+
+
+.delete{
+    display: inline-block;
+    position: absolute;
+    left: 75%;
+    top:7px;
+    font-size: 30px;
+    font-weight: bold;
+    outline:none;
+    border: none;
+    background: none;
+}
+
+.delete:hover{
+    color: rgb(255, 40, 40);
+}

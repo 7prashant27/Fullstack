@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+
+</head>
+
+<body>
+    <div id="root"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+
+    <script type="text/babel">
+
+        let todo = ["Cooking", "Cleaning", "Homework", "Doing Assignments", "coding"]
+        let about = {
+            Name: "Ritesh Ranjan",
+            Age: 23,
+            DOB: "27/08/1998",
+            Favorite_Color: "Black & White"
+        } 
+
+        function userData(user){
+            return `Name : ${user.Name}\nAge : ${user.Age}\nDOB : ${user.DOB}\nFavorite Color : ${user.Favorite_Color}`
+        }
+
+
+        let div = <div>
+            <h1> My Todo List </h1>
+            <ul>
+                {todo.map((elem) => <li>{elem}</li> )}
+            </ul>
+            <pre>{userData(about)}</pre>
+            </div>
+
+        const root = document.getElementById("root")
+
+        ReactDOM.render(div, root)
+
+    </script>
+</body>
+
+</html>

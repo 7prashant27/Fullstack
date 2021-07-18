@@ -1,0 +1,13 @@
+<html>
+    <body>
+        <input type="text" id="name" style="width: 10%; height: 5%; margin-left: 25%;" placeholder="Color Name">
+        <button onclick="change()" id="btn" style="background-color:rgb(201, 198, 198) ;width: 20%; height: 5%; margin-left: 5%; border-radius: 50px;">
+            Click here to change my color</button>
+        <script>
+            function change(){
+                var color = document.getElementById("name").value
+                document.getElementById("btn").style.backgroundColor = color
+            }
+        </script>
+    </body>
+</html>

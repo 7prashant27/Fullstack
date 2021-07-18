@@ -1,0 +1,14 @@
+{
+  "name": "js_question_testcases",
+  "version": "1.0.0",
+  "description": "masai js intro test cases",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Albert Sebastian",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^25.5.4"
+  }
+}

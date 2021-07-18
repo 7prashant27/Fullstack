@@ -1,0 +1,15 @@
+.btn{
+    margin: 5px;
+    padding: 10px;
+    border-radius: 5px;
+    border:1px solid #03bfcb;
+    color:#03bfcb;
+    background-color: #231e39;
+    font-size: 14px;
+}
+
+.btn_active{
+    border:1px solid #03bfcb;
+    background-color:#03bfcb;
+    color:#231e39;
+}

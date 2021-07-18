@@ -1,0 +1,16 @@
+.batch{
+    padding: 10px;
+    border:1px solid rgba(179, 184, 205,0.1);
+    display: inline-block;
+    margin: 5px; 
+}
+
+
+.batch_yellow{
+    border-radius: 5px;
+    background-color: #febb0b;
+    color: black;
+    display: inline-block;
+    padding: 5px 10px;
+    margin: 5px 20px;
+}

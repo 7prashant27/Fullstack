@@ -1,0 +1,82 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h4>Raise tickets/issues</h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col my-2">
+                <form id="tkt">
+                    <div class="form-group">
+                        <label for="issues">Ticket category</label>
+                        <select class="form-control" id="issues">
+                            <option value="none">-----</option>
+                            <option value="refund">Refund</option>
+                            <option value="item missing">Item missing</option>
+                            <option value="order status">Order status</option>
+                            <option value="delivery">Delivery</option>
+                            <option value="feedback">Feedback</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="textarea">Discription</label>
+                        <textarea class="form-control" id="textarea" rows="5"></textarea>
+                    </div>
+
+                    <fieldset disabled>
+                        <div class="form-group">
+                            <label for="date">Date</label>
+                            <input type="text" id="date" class="form-control" placeholder="">
+
+                        </div>
+                    </fieldset>
+                    <input type="submit" class="btn btn-primary">
+                </form>
+                <div class="form-group">
+                    <label for="issues">Filter by category</label>
+                    <select class="form-control" id="filterRef">
+                        <option value="none">-----</option>
+                        <option value="refund">Refund</option>
+                        <option value="item missing">Item missing</option>
+                        <option value="order status">Order status</option>
+                        <option value="delivery">Delivery</option>
+                        <option value="feedback">Feedback</option>
+                    </select>
+                    <br>
+                    <button class="btn btn-primary" id="search">Search</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid" id="cont"></div>
+    <nav aria-label="...">
+        <ul class="pagination justify-content-center" id="pagination">
+        </ul>
+    </nav>
+
+
+
+    <script type="text/javascript" src="KarloTickets.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

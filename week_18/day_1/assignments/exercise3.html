@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+
+</head>
+<body>
+    <input type="text" id="num_1" placeholder="First Number">
+    <input type="text" id="num_2" placeholder="Second Number">
+    <button id="add">ADD</button>
+    <div id = "root"></div>
+
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
+    <script  src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script  src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+
+    <script type ="text/babel">
+
+        window.addEventListener("load",add)
+
+        function add (){
+        const btn = document.getElementById("add")
+        btn.addEventListener("click", find_sum)
+        }
+
+        function find_sum (){
+            let a = document.getElementById("num_1").value
+            let b = document.getElementById("num_2").value
+            let num_1 = Number(a)
+            let num_2 = Number(b)
+            let elem
+            if(!isNaN(a) && !isNaN(b)){ 
+                elem = <h2>Sum of the inputs is : {num_1+num_2}</h2>
+            }
+            else if(isNaN(a) && isNaN(b)){
+                elem = <h2>Both number provided are invalid : {a} , {b}</h2>
+            }
+            else if(isNaN(b)){
+                elem = <h2>Number provided in second number is invalid : {b}</h2>
+            }
+            else{
+                elem = <h2>Number provided in first number is invalid : {a}</h2>
+            }
+            manipulate_dom(elem)
+        }
+
+        function manipulate_dom(elem){
+            ReactDOM.render(elem, root)
+        }
+        
+
+    </script>
+</body>
+</html>

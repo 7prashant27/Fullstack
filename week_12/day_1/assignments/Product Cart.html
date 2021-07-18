@@ -1,0 +1,113 @@
+<html>
+
+<head>
+
+</head>
+
+<body>
+    <form id="form">
+        <input type="text" id="productName" placeholder="Product Name">
+
+        <input type="number" id="qty" placeholder="Quantity">
+
+        <input type="number" id="value" placeholder="Value">
+
+        <input type="submit" value="add to cart">
+    </form>
+    <div id="cart" style=" padding: 10px;">
+    </div>
+    <br>
+    <button id="createBill">Create Bill</button>
+    <br>
+    <div id=total></div>
+
+    <script>
+        var cart = {}
+        var itemno = 1
+        window.addEventListener("load", add)
+
+        function add() {
+            let x = document.getElementById("form")
+            x.addEventListener("submit", createData)
+            let y = document.getElementById("createBill")
+            y.addEventListener("click", createBill)
+        }
+
+        function createData() {
+            event.preventDefault()
+            var productName = document.getElementById("productName").value
+            var qty = Number(document.getElementById("qty").value)
+            var value = Number(document.getElementById("value").value)
+
+
+            function Data(productName, qty, value) {
+                this.productName = productName
+                this.qty = Number(qty)
+                this.value = Number(value)
+            }
+
+            var item = new Data(productName, qty, value)
+            cart[itemno] = item
+            itemno++
+            display()
+        }
+
+        function display() {
+
+            var x = document.createElement("div")
+            x.style.display = "grid"
+            x.style.gridTemplateColumns = "auto auto auto"
+            for (var key in cart) {
+
+                var div = document.createElement("div")
+                div.style.width = "auto"
+                div.style.border = "2px solid black"
+
+
+                var productName = document.createElement("p")
+                productName.textContent = "Product Name : " + cart[key].productName
+
+                var qty = document.createElement("p")
+                qty.textContent = "Quantity : " + cart[key].qty
+
+                var value = document.createElement("p")
+                value.textContent = "Value : " + cart[key].value
+
+                div.append(productName, qty, value)
+                x.append(div)
+
+            }
+            var target = document.getElementById("cart")
+            target.style.border = "2px solid blue"
+            target.innerHTML = ""
+            target.append(x)
+        }
+
+       function makeBill(){
+            total = 0
+           for (var key in this){
+                total += this[key].qty*this[key].value
+           }
+           var p = document.createElement("p")
+           p.textContent = "Total amount is : "+total
+           var target = document.getElementById("total")
+           target.style.border = "2px solid red"
+           target.innerHTML = ""
+           target.append(p)
+       }
+
+       function createBill(){
+           makeBill.call(cart)
+       }
+       
+    //    function generateBill(){
+    //     cart.forEach(function(elem){ 
+    //             makeBill.call(elem)
+    //             console.log(total)
+    //         })
+    //    }
+
+    </script>
+</body>
+
+</html>

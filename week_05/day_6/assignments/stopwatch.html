@@ -1,0 +1,103 @@
+<html>
+
+<head>
+    <style>
+        input {
+            padding: 10px;
+            width: 50px;
+            margin: 20px 20px;
+            text-align: right;
+        }
+
+        p {
+            margin-left: 20px;
+            font-size: 20px;
+        }
+
+        button {
+            padding: 5px;
+            width: 100px;
+            margin-left: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <div id="cont">
+            <p id="show">0:0:0</p>
+        </div>
+        <div>
+            <button id="start">start</button>
+            <button id="pause">pause</button>
+            <button id="reset">reset</button>
+        </div>
+    </div>
+
+
+
+    <script>
+
+        var timer
+        var timesacped = 0
+        var timerrunning = false
+        var timerfired = false
+        window.addEventListener("load", add)
+
+        function add() {
+            var play = document.getElementById("start")
+            play.addEventListener("click", start)
+            var hold = document.getElementById("pause")
+            hold.addEventListener("click", pause)
+            var stop = document.getElementById("reset")
+            stop.addEventListener("click", reset)
+        }
+
+        // function gettime() {
+        //     var hr = Number(document.getElementById("hour").value) || 0
+        //     var mnts = Number(document.getElementById("mnts").value) || 0
+        //     return (hr * 60 * 60 + mnts * 60)
+        // }
+
+        function start() {
+
+            if (timerfired == false) {
+                timerfired = true
+                timerrunning = true
+                play()
+            }
+
+            else if (timerrunning == false) {
+                play()
+                timerrunning = true
+            }
+
+
+        }
+
+        function play() {
+            var p = document.getElementById("show")
+            timer = setInterval(function () {
+                timesacped++
+                    p.textContent = `${Math.floor(timesacped / 60 / 60)}:${Math.floor(timesacped / 60)}:${timesacped % 60}`
+            }, 1000)
+        }
+
+        function pause() {
+            clearInterval(timer)
+            timerrunning = false
+        }
+
+
+        function reset() {
+            clearInterval(timer)
+            var p = document.getElementById("show")
+            p.textContent = "0:0:0"
+            timesacped = 0
+            timerfired = false
+        }
+
+    </script>
+</body>
+
+</html>

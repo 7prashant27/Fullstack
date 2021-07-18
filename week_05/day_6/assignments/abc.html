@@ -1,0 +1,61 @@
+<html>
+    <head>
+<style>
+    button{
+        padding: 10px;
+        width: 100px;
+        font-size: 18px;
+        color: white;
+        background-color: blue;
+        border: hidden;
+    }
+</style>
+</head>
+<body>
+<h1>Timer</h1>
+
+<h1 id ="title">0</h1>
+<p><button id="my-button">Start</button></p>
+
+
+
+<script>
+
+    var button = document.getElementById("my-button");
+    var title = document.getElementById('title');
+    var time = 0;
+    var myInterval=-1;
+
+    button.addEventListener('click',function(event){
+            
+        // if paused start timer
+
+        if(myInterval ==-1){
+            button.innerHTML="Pause"
+            button.style.background="red"
+            myInterval = setInterval(function(){
+                time ++;
+                title.innerHTML = time;
+        },1000);
+
+        }
+          //else pause
+        else{
+            button.innerHTML="Start"
+            button.style.background="green"
+            clearInterval(myInterval) // to prevent create interval if we click btn
+            myInterval = -1;
+
+        } 
+       
+        
+    })
+
+
+
+
+
+</script>
+
+</body>
+</html>

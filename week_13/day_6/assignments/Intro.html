@@ -1,0 +1,78 @@
+<html>
+
+<head>
+    <style>
+        #display {
+            width: 150px;
+            height: 20px;
+            background-color: wheat;
+            border: 1px solid black;
+            padding: 10px;
+            text-align: right;
+        }
+
+        input {
+            margin: 10px;
+        }
+
+        label {
+            text-align: justify;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div>
+        <label for="mathematics">mathematics</label>
+        <input type="text" id="mathematics"><br>
+        <label for="english">english</label>
+        <input type="text" id="english"><br>
+        <label for="geography">geography</label>
+        <input type="text" id="geography"><br>
+        <label for="science">science</label>
+        <input type="text" id="science"><br>
+        <label for="accounts">accounts</label>
+        <input type="text" id="accounts"><br>
+        <button id="submit">Get Average</button>
+    </div>
+    <br>
+    <div id="display"></div>
+
+
+    <script>
+        window.addEventListener("load", function () { document.getElementById("submit").addEventListener("click", get_data) })
+
+        function get_data() {
+
+            const mathematics = Number(document.getElementById("mathematics").value)
+            const english = Number(document.getElementById("english").value)
+            const geography = Number(document.getElementById("geography").value)
+            const science = Number(document.getElementById("science").value)
+            const accounts = Number(document.getElementById("accounts").value)
+            getAvg(mathematics,english,geography,science,accounts)
+
+        }
+
+
+
+        const getAvg = function (mathematics = 0, english = 0, geography = 0, science = 0, accounts = 0) {
+
+            let avg = (mathematics + english + geography + science + accounts) / 5
+
+            const target = document.getElementById("display")
+
+            target.textContent = ""
+
+            console.log(avg)
+
+            target.textContent = avg
+        }
+
+
+
+    </script>
+</body>
+
+</html>

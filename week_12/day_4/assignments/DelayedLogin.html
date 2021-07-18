@@ -1,0 +1,86 @@
+<html>
+    <head>
+        <title>DELAYED LOGIN</title>
+        <style>
+            div{
+                white-space:pre-line;
+            }
+        </style>
+    </head>
+    <body>
+        <form>
+            <div>
+                Username:
+                <input type="text" id="username" placeholder="username">
+            </div>
+            <div>
+                Email:
+                <input type="email" id="email" placeholder="email">
+            </div>
+            <div>
+                Img Url
+                <input type="url" id="url" placeholder="url">
+            </div>
+            <div>
+                Time:
+                <input type="number" id="time" placeholder="time in miliseconds">
+            </div>
+            <div>
+                <input type="submit" value="SUBMIT">
+            </div>
+        </form>
+        <script type="text/javascript">
+            window.onload=function(){
+                var form=document.querySelector("form")
+                form.addEventListener("submit",handleForm)
+                
+            }
+            function handleForm(){
+                event.preventDefault()
+                var username=document.getElementById("username").value
+                var email=document.getElementById("email").value
+                var img=document.getElementById("url").value
+
+                var time=document.getElementById("time").value
+
+                sleep(time,username,email,img)
+
+            }
+
+            function sleep(time,username,email,img){
+                
+                setTimeout(function(){
+                    renderDOM(username,email,img)
+                },time)
+            }
+
+            function renderDOM(username,email,img){
+                var form=document.querySelector("form")
+                form.innerHTML=" "
+                
+                var div=document.createElement("div")
+                div.style.border="2px solid black"
+                div.style.width="300px"
+                div.style.height="300px"
+                div.style.whiteSpace="pre-line"
+                
+
+                var p1=document.createElement("p")
+
+                 p1.textContent="Username: "+username 
+
+                var p2=document.createElement("p")
+                  p2.textContent= "Email: "+ email 
+                var p3=document.createElement("img")
+                  p3.src=img
+              
+                
+
+                div.append(p1,p2,p3)
+
+                form.append(div)
+            }
+          
+        </script>
+    </body>
+</html>

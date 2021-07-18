@@ -1,0 +1,59 @@
+<html>
+    <head>
+
+    </head>
+
+    <body>
+        <form id="form">
+        <input type="text" id="email">
+
+        <input type="text" id="address">
+        
+        <input type="submit">
+    </form>
+    <div id="cont"></div>
+
+        <script>
+            window.addEventListener("load", add)
+
+            function add(){
+                let x = document.getElementById("form")
+                x.addEventListener("submit" , createData)
+            }
+
+            function createData(){
+                event.preventDefault()
+                var user = document.getElementById("email").value
+                var address = document.getElementById("address").value
+
+
+                function Person (user,address){
+                    this.user = user
+                    this.address = address
+                }
+
+                var person = new Person(user,address)
+                console.log(person)
+                appendCard.call(person)
+            }
+
+            function appendCard(){
+               var x = this.user
+               var y = this.address
+                var div = document.createElement("div")
+                div.style.width = "200px"
+                div.style.border = "2px solid black"
+               var pUser = document.createElement("p")
+                pUser.textContent = x
+                var pAddress = document.createElement("p")
+                pAddress.style.whiteSpace = "pre-line"
+
+                pAddress.textContent = y
+                div.append(pUser,pAddress)
+                var target = document.getElementById("cont")
+                target.append(div)
+            }
+
+        </script>
+    </body>
+</html>

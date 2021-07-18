@@ -1,0 +1,79 @@
+<html>
+
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+</head>
+
+<body>
+
+    <div style="display: inline;">
+        <input type="text" id="label_input" placeholder="Input Label">
+        <input type="text" id="attendence_input" placeholder="Attendence">
+        <input type="text" id="performance_input" placeholder="Performance">
+        <button id="submit_newdata">Submit</button>
+    </div>
+
+    <div style="width: 800px; height: 450px; margin: 50px auto;">
+        <canvas id="myChart""></canvas>
+    </div>
+    <script>
+        let myChart
+        let label_data = ["January", "Fabruary", "March", "April", "May", "June"]
+        let attendance_data = [70, 80, 40, 90, 45, 95]
+        let performance_data = [80, 60, 90, 80, 50, 90]
+        let loadChart = {
+            type: "bar",
+            data: {
+                labels: label_data,
+                datasets: [
+                    {
+                        label: "Attendance",
+                        data: attendance_data,
+                        backgroundColor: 'rgba(255, 99, 132, 0.3)',
+                        borderColor: "rgb(0, 0, 0)",
+                        borderWidth: 1,
+                    },
+                    {
+                        label: "Performance",
+                        data: performance_data,
+                        backgroundColor: 'rgba(54, 162, 235, 0.3)',
+                        borderColor: "rgb(0, 0, 0)",
+                        borderWidth: 1,
+                    },
+                ],
+            },
+            options: {
+                scales: {
+                    yAxes: [
+                        {
+                            ticks: {
+                                beginAtZero: true,
+                            },
+                        },
+                    ],
+                },
+            },
+        };
+
+        function addData() {
+            let label = document.getElementById("label_input").value
+            let attendance = document.getElementById("attendence_input").value
+            let performance = document.getElementById("performance_input").value
+            label_data.push(label)
+            attendance_data.push(attendance)
+            performance_data.push(performance)
+            myChart.update();
+        }
+
+        
+
+        window.addEventListener("DOMContentLoaded", function () {
+            let target = document.getElementById("myChart");
+            myChart = new Chart(target, loadChart);
+            let submit_newdata = document.getElementById("submit_newdata")
+            submit_newdata.addEventListener("click", addData)
+        });
+    </script>
+</body>
+
+</html>

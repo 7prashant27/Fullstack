@@ -1,0 +1,51 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+
+</head>
+
+
+<body>
+
+
+    <div class="container p-4">
+        <div class="row">
+            <div class="col-6">
+                <div class="alert alert-warning" role="alert">
+                    <p class="h5" id="display_token"> </p>
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="first_name_input">First Name</label>
+                    <input type="email" class="form-control" id="first_name_input">
+                </div>
+                <div class="form-group">
+                    <label for="last_name_input">Last Name</label>
+                    <input type="password" class="form-control" id="last_name_input">
+                </div>
+                <div class="form-group">
+                    <label for="email_input">Email</label>
+                    <input type="text" class="form-control" id="email_input">
+                </div>
+                <div class="form-inline">
+                    <label for="ifsc_input" class="m-2">IFSC Code</label>
+                    <input type="text" class="form-control m-2" id="ifsc_input">
+                    <button type="submit" class="btn btn-primary m-2" id="verify_ifsc">Verify</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-6">
+                <div class="container m-4" id="display_ifsc"></div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="dashboard.js"></script>
+</body>
+
+</html>

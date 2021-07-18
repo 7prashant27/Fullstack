@@ -1,0 +1,127 @@
+.navbar {
+    height: 70px;
+    position: relative;
+  }
+  
+  .toggleButton {
+    position: absolute;
+    left: 80%;
+    top: 20px;
+    padding: 5px 20px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+  }
+  
+  .content {
+    display: flex;
+    flex: 1;
+  }
+
+  small{
+    font-size: 12px;
+    margin-top: 15px ;
+  }
+
+  form input{
+    margin: 5px 20px 50px 0px;
+    padding: 10px;
+    border: none;
+    border-bottom: 2px solid red;
+    outline: none;
+    background: none;
+  }
+
+  form button {
+    border-radius: 10px;
+    background: none;
+    outline: none;
+    padding: 10px 70px;
+    background-color: beige;
+    border:none
+  }
+
+  .heading{
+    width: 300px;
+    margin: 20px 200px;
+  }
+
+  .from_div {
+    padding: 50px;
+    border-radius: 10px;
+    outline: 1px black;
+    width: 200px;
+    height: 300px;
+    justify-content: center;
+    align-items: center;
+    margin: 90px 100px 90px 300px;
+  }
+  
+  .footer_bar {
+  height: 80px;
+   width: 100%;
+   text-align: center
+  }
+  
+  /* light section */
+  
+  .light{
+    background-color: white;
+    height: 100%;
+  }
+
+  .light .navbar {
+    background-color: beige;
+    
+  }
+  
+  .light .toggleButton {
+    background-color: black;
+    color: white;
+  }
+
+  
+
+  .light .from_div{
+    background-color: rgb(87, 87, 87);
+    color: white;
+  }
+  
+  
+  .light .footer_bar {
+    background-color: beige;
+  }
+  
+  /* dark section */
+
+  .dark{
+    background-color: rgb(87, 87, 87);
+    height: 100%;
+  }
+  
+  .dark .navbar {
+    background-color: black;
+  }
+  
+  .dark .toggleButton {
+    background-color: beige;
+  }
+
+  .dark .heading{
+    color: beige;
+  }
+
+  .dark .from_div{
+    background-color: beige;
+  }
+  
+  .dark form button {
+    background-color: black;
+    color : white
+  }
+  
+  .dark .footer_bar {
+    background-color: black;
+    color:beige
+  }
+  

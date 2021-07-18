@@ -1,0 +1,29 @@
+<html>
+    <body>
+        <input id="limit" type="number" placeholder="Enter the limit">
+        <button onclick="result()">Click here to find the exponent!</button>
+
+        <script type="text/javascript">
+
+        function sum(limit){
+            var sum = 0
+            for (var i = 0 ; i < limit+1 ; i++){
+                if (i%3 == 0 && i%5==0){
+                    sum = sum + i
+                }
+            }
+            console.log(sum)
+            return(sum)
+        }
+
+        function result(){
+            var limit = document.getElementById("limit").value
+            var res = sum(Number(limit))
+            var p = document.createElement("p")
+            p.textContent = res
+            document.querySelector("body").append(p)
+        }
+
+        </script>
+    </body>
+</html>

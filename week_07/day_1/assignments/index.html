@@ -1,0 +1,69 @@
+<html>
+    <head>
+        
+    </head>
+
+    <body>
+        <div id="main_div">
+        <input id="name" placeholder="name">
+        <input id="phoneNo" placeholder="phone no">
+        <button id="submit">name create</button>
+        <div id="res"></div>
+        </div>
+
+
+        <script>
+            var sub = document.getElementById("main_div")
+            sub.addEventListener("click", work)
+
+
+
+            function work(elem){
+                console.log(event.target.id)
+                if (event.target.id == "submit"){
+                    
+
+                var tgt = document.getElementById("res")
+                var div = document.createElement("div")
+                div.setAttribute("class" , "card")
+
+
+                var name = document.getElementById("name").value
+                var phone = document.getElementById("phoneNo").value
+                var cardName = document.createElement("p")
+                var cardPhone = document.createElement("p")
+                //cardPhone.setAttribute("id","cardPhone")
+                cardPhone.style.display = "block"
+                cardPhone.setAttribute("flag", true)
+                cardName.textContent = name
+                cardPhone.textContent = phone
+                var showbtn = document.createElement("button")
+                showbtn.textContent = "Show/Hide number"
+                showbtn.setAttribute("id", "show_hide")
+                div.append(cardName,cardPhone,showbtn)
+                tgt.append(div)
+                console.log(event.target.id)
+            }
+
+            if (event.target.id == "show_hide"){
+                show_hide()
+            }
+        }
+
+
+            function show_hide(){
+                
+                var phone = event.target.previousElementSibling
+                if(phone.getAttribute("flag") == "false"){
+                    phone.style.display = "block"
+                    phone.setAttribute("flag", true)
+                }
+                else{phone.style.display = "none"
+                    phone.setAttribute("flag", false)
+                }
+            }
+
+        </script>
+    </body>
+    
+</html>

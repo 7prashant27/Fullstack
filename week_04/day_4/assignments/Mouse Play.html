@@ -1,0 +1,60 @@
+<html>
+<head>
+
+    <style>
+        #cont { width: 400px; height: 300px; background-color: blue; margin: a;}
+        #btn { width: 100px; margin: 60% 0% 0% 70%; height: 50px; border-radius: 50px;}
+    </style>
+
+</head>
+
+<body>
+    
+
+
+    <script>
+        window.addEventListener("load" , renderDom)
+
+        function renderDom(){
+           
+            var div = document.createElement("div")
+            div.setAttribute("id" , "cont" )
+            div.addEventListener("mouseenter" , colorchange)
+            var btn = document.createElement("button")
+            btn.setAttribute("id" , "btn")
+            btn.textContent = "Submit"
+            
+
+
+            div.append(btn)
+
+            var target = document.querySelector("body")
+            target.append(div)
+
+        }
+
+
+        function colorchange (elem) { 
+            //var  x = document.querySelector("#btn")
+            var y = elem.target
+            var w = y.firstElementChild
+            //console.log(w)
+            var randomColor = 'rgb(' + random(255) + ',' + random(255) + ',' + random(255) + ')';
+            w.style.backgroundColor = randomColor
+            y.addEventListener("mouseleave" , revert)
+        }
+
+        function revert(elem){
+            var y = elem.target
+            var w = y.firstElementChild
+            w.style.backgroundColor = "white"
+        }
+
+
+        function random(number) {
+            return Math.floor(Math.random() * number);
+        }
+
+    </script>
+</body>
+</html>

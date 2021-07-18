@@ -1,0 +1,84 @@
+<html>
+
+<head>
+
+    <style>
+        p {
+            white-space: pre-line;
+        }
+
+        #cont {
+            display: grid;
+            grid-template-columns: auto auto auto;
+        }
+
+        #card {
+            border: 2px solid black;
+            padding-left: 20px;
+        }
+
+        img {height: 300px;}
+    </style>
+
+</head>
+
+<body>
+    <div>
+        <form id="form">
+            <input type="user" id="user" placeholder="username">
+            <input type="text" id="email" placeholder="EmailID">
+            <input type="text" id="img" placeholder="Image URL">
+            <input type="number" id="time" placeholder="Delayed login in sec">
+            <input type="submit">
+        </form>
+    </div>
+    <div id="cont"></div>
+
+    <script>
+        let data = []
+        window.addEventListener("load", add)
+
+        function add() {
+            let x = document.getElementById("form")
+            x.addEventListener("submit", sleep)
+        }
+
+        function sleep() {
+            event.preventDefault()
+
+            let user = document.getElementById("user")
+            let email = document.getElementById("email")
+            let imgurl = document.getElementById("img")
+            let time = document.getElementById("time")
+
+            let div = document.createElement("div")
+
+            div.setAttribute("id", "card")
+            let p = document.createElement("p")
+
+            p.textContent = `${user.value} \n ${email.value}`
+            let img = document.createElement("img")
+            img.setAttribute("src", `${imgurl.value}`)
+            div.append(p, img)
+            data.push(div)
+            setTimeout(function () {
+                renderdom()
+            }, Number(time.value))
+
+            user.value = ""
+            email.value = ""
+            imgurl.value = ""
+            time.value = ""
+        }
+
+        function renderdom() {
+            for (let i = 0; i < data.length; i++) {
+                let target = document.getElementById("cont")
+                target.append(data[i])
+            }
+        }
+
+    </script>
+</body>
+
+</html>

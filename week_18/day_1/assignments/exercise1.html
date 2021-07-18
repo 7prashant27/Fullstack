@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+
+</head>
+<body>
+    <div id = "root"></div>
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
+    <script  src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script  src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+
+    <script type ="text/babel">
+
+    // let heading = React.createElement("h1",{},"My Todo List")
+    
+    // let li1 = React.createElement("li",{id:"li1"},"Cooking")
+    // let li2 = React.createElement("li",{id:"li2"},"Cleaning")
+    // let li3 = React.createElement("li",{id:"li3"},"Homework")
+    // let li4 = React.createElement("li",{id:"li4"},"Doing Assignments")
+    // let ul = React.createElement("ul",{},li1,li2,li3,li4)
+    // let p = React.createElement("pre",{}, `Name : Ritesh Ranjan\nAge : 23\nDOB : 27/08/1998\nFavorite Color : Black & White`)
+
+    // const root = document.getElementById("root")
+
+    // let div = React.createElement("div",{}, heading,ul,p)
+
+    // ReactDOM.render(div,root)
+
+    
+
+    let heading = <h1> My Todo List </h1>
+    
+    let li1 = <li>Cooking</li>
+    let li2 = <li>Cleaning</li>
+    let li3 = <li>Homework</li>
+    let li4 = <li>Doing Assignments</li>
+    let li5 = <li>Coding</li>
+    let ul = <ul>{li1}{li2}{li3}{li4}{li5}</ul>
+
+    let pre = <pre>{`Name : Ritesh Ranjan\nAge : 23\nDOB : 27/08/1998\nFavorite Color : Black & White`}
+    </pre>
+
+    let div = <div>{heading}{ul}{pre}</div>
+
+    const root = document.getElementById("root")
+
+    ReactDOM.render(div,root)
+
+
+
+
+    </script>
+</body>
+</html>

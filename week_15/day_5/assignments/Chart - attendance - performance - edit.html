@@ -1,0 +1,140 @@
+<html>
+
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+</head>
+
+<body>
+    <div class="container"></div>
+    <div style="display: inline;">
+        <input type="text" id="label_input" placeholder="Input Label">
+        <input type="text" id="attendence_input" placeholder="Attendence">
+        <input type="text" id="performance_input" placeholder="Performance">
+        <button id="submit_newdata">Submit</button>
+    </div>
+
+    <div style="width: 800px; height: 450px; margin: 50px auto;">
+        <canvas id="myChart""></canvas>
+    </div>
+
+    <div style=" display: inline;">
+            <select id="select">
+                <option value="">Select</option>
+            </select>
+            <input type="text" id="attendence_edit">
+            <input type="text" id="performance_edit">
+            <button id="update_data">Update</button>
+    </div>
+
+    <button id="remove_data">Remove Last Element</button>
+    <script>
+        let myChart
+        let label_data = ["January", "Fabruary", "March", "April", "May", "June"]
+        let attendance_data = [70, 80, 40, 90, 45, 95]
+        let performance_data = [80, 60, 90, 80, 50, 90]
+        let loadChart = {
+            type: "bar",
+            data: {
+                labels: label_data,
+                datasets: [
+                    {
+                        label: "Attendance",
+                        data: attendance_data,
+                        backgroundColor: 'rgba(255, 99, 132, 0.3)',
+                        borderColor: "rgb(0, 0, 0)",
+                        borderWidth: 1,
+                    },
+                    {
+                        label: "Performance",
+                        data: performance_data,
+                        backgroundColor: 'rgba(54, 162, 235, 0.3)',
+                        borderColor: "rgb(0, 0, 0)",
+                        borderWidth: 1,
+                    },
+                ],
+            },
+            options: {
+                scales: {
+                    yAxes: [
+                        {
+                            ticks: {
+                                beginAtZero: true,
+                            },
+                        },
+                    ],
+                },
+            },
+        };
+
+        function addData() {
+            let label = document.getElementById("label_input").value
+            let attendance = document.getElementById("attendence_input").value
+            let performance = document.getElementById("performance_input").value
+            label_data.push(label)
+            attendance_data.push(attendance)
+            performance_data.push(performance)
+            myChart.update();
+        }
+
+        function removeData() {
+            label_data.pop()
+            attendance_data.pop()
+            performance_data.pop()
+            myChart.update();
+        }
+
+        function update_input_elemet() {
+            let index = label_data.indexOf(event.target.value)
+            document.getElementById("attendence_edit").value = attendance_data[index]
+            document.getElementById("performance_edit").value = performance_data[index]
+        }
+
+        function update_select_elemet() {
+            const target = document.getElementById("select")
+            target.innerHTML = ""
+            let opt1 = document.createElement("option")
+            opt1.value = ""
+            opt1.textContent = "Select"
+            let fag = document.createDocumentFragment()
+            fag.append(opt1)
+            label_data.forEach((elem, index) => {
+
+                let opt = document.createElement("option")
+                opt.value = elem
+                opt.textContent = elem
+                fag.append(opt)
+            })
+            target.append(fag)
+        }
+
+        function update_edit() {
+            let lbl = document.getElementById("select").value
+            let att = document.getElementById("attendence_edit").value
+            let per = document.getElementById("performance_edit").value
+            let index = label_data.indexOf(lbl)
+            attendance_data[index] = att
+            performance_data[index] = per
+            myChart.update();
+        }
+
+        window.addEventListener("DOMContentLoaded", function () {
+            let target = document.getElementById("myChart");
+            myChart = new Chart(target, loadChart);
+
+            let submit_newdata = document.getElementById("submit_newdata")
+            submit_newdata.addEventListener("click", addData)
+
+            let remove_data = document.getElementById("remove_data")
+            remove_data.addEventListener("click", removeData)
+
+            let edit_fill = document.getElementById("select")
+            edit_fill.addEventListener("change", update_input_elemet)
+            edit_fill.addEventListener("mouseenter", update_select_elemet)
+            
+            let update = document.getElementById("update_data")
+            update.addEventListener("click", update_edit)
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+[
+    {
+      "id": 16,
+      "age": 32,
+      "eyeColor": "brown",
+      "name": "Schmidt Wood",
+      "gender": "male"
+    },
+    {
+      "id": 13,
+      "age": 20,
+      "eyeColor": "green",
+      "name": "Pratt Hooper",
+      "gender": "male"
+    },
+    {
+      "id": 6,
+      "age": 22,
+      "eyeColor": "blue",
+      "name": "Levy Ayala",
+      "gender": "male"
+    },
+    {
+      "id": 16,
+      "age": 32,
+      "eyeColor": "blue",
+      "name": "Kitty Bowman",
+      "gender": "female"
+    },
+    {
+      "id": 4,
+      "age": 35,
+      "eyeColor": "brown",
+      "name": "Heidi Koch",
+      "gender": "female"
+    },
+    {
+      "id": 3,
+      "age": 21,
+      "eyeColor": "blue",
+      "name": "Kathy Randolph",
+      "gender": "female"
+    }
+  ]

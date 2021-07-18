@@ -1,0 +1,12 @@
+.container{
+    height: 500px;
+    width: 500px;
+    margin: 50px;
+}
+
+input{
+    padding: 5px;
+    border: 2px solid white;
+    border-bottom-color: rgb(223, 74, 74);
+    outline: none;
+}

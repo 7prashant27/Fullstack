@@ -1,0 +1,124 @@
+<html>
+
+<head>
+    <style>
+        input {
+            padding: 10px;
+            width: 50px;
+            margin: 20px 20px;
+            text-align: right;
+        }
+        p {margin-left: 20px; font-size: 20px;}
+        button {
+            padding: 5px;
+            width: 100px;
+            margin-left: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <div id="input_div">
+            <label>Hour</label>
+            <input types="text" id="hour">
+            <label>Min</label>
+            <input type="text" id="mnts">
+            <label>sec</label>
+            <input type="text" id="sec">
+        </div>
+        <div id="cont"></div>
+        <div>
+            <button id="start">start</button>
+            <button id="pause">pause</button>
+            <button id="reset">reset</button>
+        </div>
+    </div>
+
+
+
+    <script>
+
+        var timer
+        var timeremaining
+        var timerrunning = false
+        var timerfired = false
+        window.addEventListener("load", add)
+
+        function add() {
+            var play = document.getElementById("start")
+            play.addEventListener("click", start)
+            var hold = document.getElementById("pause")
+            hold.addEventListener("click", pause)
+            var stop = document.getElementById("reset")
+            stop.addEventListener("click", reset)
+        }
+
+        function gettime() {
+            var hr = Number(document.getElementById("hour").value) || 0
+            var mnts = Number(document.getElementById("mnts").value) || 0
+            var sec = Number(document.getElementById("sec").value) || 0
+            return (hr * 60 * 60 + mnts * 60 + sec)
+        }
+
+        function start() {
+
+            if (timerfired == false) {
+                timeremaining = gettime()
+                if (timeremaining == 0) {
+                    alert("Enter countdown time ")
+                }
+                else {
+                    var display = document.getElementById("cont")
+                    var p = document.createElement("p")
+                    p.setAttribute("id", "show")
+                    display.append(p)
+                    timerfired = true
+                    timerrunning = true
+                    play()
+                }
+            }
+
+            else if (timerrunning == false) {
+                play()
+                timerrunning = true
+            }
+
+
+        }
+
+        function play() {
+            var p = document.getElementById("show")
+            timer = setInterval(function () {
+                if (timeremaining === 0) {
+                    clearInterval(timer)
+                    p.textContent = "Time Out"
+                    timerfired = false
+                }
+                else {
+                    timeremaining--
+                    p.textContent = `${Math.floor(timeremaining/60/60)}:${Math.floor(timeremaining/60)}:${timeremaining%60}`
+                }
+            }, 1000)
+        }
+
+        function pause() {
+            clearInterval(timer)
+            timerrunning = false
+        }
+
+
+        function reset() {
+            clearInterval(timer)
+            timeremaining = 0
+            timerfired = false
+            timerrunning = false
+            document.getElementById("hour").value = 0
+            document.getElementById("mnts").value = 0
+            document.getElementById("sec").value = 0
+        }
+
+    </script>
+</body>
+
+</html>

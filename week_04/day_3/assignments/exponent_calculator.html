@@ -1,0 +1,25 @@
+<html>
+    <body>
+        <input id="x" type="number" placeholder="value of x">
+        <input id="y" type="number" placeholder="value of y">
+        <button onclick="result()">Click here to find the exponent!</button>
+
+        <script type="text/javascript">
+
+        function pwr(x,y){
+            var z = x
+            for (var i = 0 ; i < y-1; i++){
+                z = z*x
+            }
+            return(z)
+        }
+
+        function result(){
+            var x = document.getElementById("x").value 
+            var y = document.getElementById("y").value
+            alert(pwr(Number(x),Number(y)))
+        }
+
+        </script>
+    </body>
+</html>

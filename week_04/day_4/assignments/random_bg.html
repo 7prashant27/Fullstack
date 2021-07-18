@@ -1,0 +1,28 @@
+<html>
+
+<head>
+
+</head>
+
+<body>
+
+
+
+
+    <script>
+        window.addEventListener("resize", change)
+
+        function change() {
+            var body = document.querySelector("body")
+            var randomColor = 'rgb(' + random(255) + ',' + random(255) + ',' + random(255) + ')';
+            body.style.backgroundColor = randomColor
+
+        }
+
+        function random(number) {
+            return Math.floor(Math.random() * number);
+        }
+    </script>
+</body>
+
+</html>

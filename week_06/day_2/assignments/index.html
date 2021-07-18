@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    .inputContainer {float: left;
+      display: block;
+    }
+
+    .inputContainer * {padding: 10px; display: block;}
+
+    p {
+      padding-top: 2%;
+      white-space: pre-line;
+    }
+    .displayContainer { display: grid; grid-template-columns: auto auto auto;}
+  </style>
+</head>
+
+<body>
+  <div class="allContainer">
+    <div class="inputContainer">
+      <label for="firstName ">firstName</label>
+      <input type="text" name="firstName" class="customerInput"/>
+
+      <label for="lastName">lastName</label>
+      <input type="text" name="lastName" class="customerInput"/>
+
+      <label for="dateOfBirth">dateOfBirth</label>
+      <input type="text" name="dateOfBirth" class="customerInput"/>
+
+      <label for="balance">balance</label>
+      <input type="text" name="balance" class="customerInput"/>
+      
+      <label for="accountNumber">accountNumber</label>
+      <input type="text" name="accountNumber" class="customerInput"/>
+
+      <label for="name">sharedAccountHolders(Comma separated!)</label>
+      <input type="text" name="name" class="customerInput"/>
+
+      <button name="submit" id='submitBtn'>Add customer</button>
+
+      <button name="displayPeople" id='displayallBtn'>Display All Poeple</button>
+    </div>
+    <div class = "displayContainer"></div>
+  </div>
+</body>
+
+<script>
+  
+
+
+function Customers(firstName, lastName, dateOfBirth, balance , accountNumber, sharedAccountHolders){
+  this.firstName = firstName
+  this.lastName = lastName
+  this.dateOfBirth = dateOfBirth
+  this.balance = balance
+  this.accountNumber = accountNumber
+  this.sharedAccountHolders = sharedAccountHolders
+  this.getDetails = function(){
+    var output = ''
+    for(key in this){
+      output += key + ":" + this[key] + "\n"
+      if(key == 'sharedAccountHolders') break;
+     }
+     return output 
+   }
+}
+
+
+var customerArr  = [] 
+
+function createPerson(){
+  var inputs = document.querySelectorAll('.customerInput') 
+  var newPerson = new Customers()
+  var i = 0
+  for(key in newPerson){
+    if(newPerson[key] == undefined){
+      if(key != 'sharedAccountHolders'){
+        newPerson[key] = inputs[i].value
+      }
+      else {
+        newPerson[key] = inputs[i].value.split(",")
+      }
+      inputs[i].value = "" 
+      i++
+    }
+  }
+  customerArr.push(newPerson) 
+  console.log(customerArr)
+  displayOne(newPerson)
+}
+
+
+function displayOne(newPerson){
+  var displayContainer = document.querySelector('.displayContainer')
+  displayContainer.innerHTML = ''
+    var displayPara = document.createElement('p') 
+    displayPara.textContent = newPerson.getDetails() 
+    displayContainer.appendChild(displayPara) 
+}
+
+function displayAll(){
+  var displayContainer = document.querySelector('.displayContainer')
+  displayContainer.innerHTML = ''
+  for(var i = 0; i < customerArr.length;i++){ 
+    var displayPara = document.createElement('p') 
+    displayPara.textContent = customerArr[i].getDetails() 
+    displayContainer.appendChild(displayPara) 
+  }
+}
+
+var submitBtn = document.querySelector('#submitBtn')
+submitBtn.addEventListener('click', createPerson) 
+
+var displayBtn = document.querySelector('#displayallBtn')
+displayBtn.addEventListener('click',displayAll)
+
+</script>
+
+</html>
